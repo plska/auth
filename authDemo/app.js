@@ -6,7 +6,9 @@ var     express      =require ("express"),
         LocalStrategy=require("passport-local"),
         path = require('path'),
         formidable = require('formidable'),
-        fs = require('fs'),
+        walk    = require('walk'),
+        fs = require('fs-promise'),
+        files   = [],
         passportLocalMongoose= require("passport-local-mongoose");
 
 mongoose.connect("mongodb://localhost/auth_demo_app");
@@ -64,7 +66,15 @@ app.get("/login" ,function(req,res){
 
 
 app.get("/uploads" ,function(req,res){
-    res.render("show");
+        var walker  = walk.walk('./uploads', { followLinks: true });
+        walker.on('file', function(root, stat, next) {
+            // Add this file to the list of files
+        files.push(stat.name);
+        next();
+});
+walker.on('end', function() {
+    res.render("show", {thingVar:files});
+});
 });
 
 app.post("/login" , passport.authenticate("local", {
