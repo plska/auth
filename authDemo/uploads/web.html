@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>
+	Register 
+	</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1>Registration</h1>
+
+<form>
+<label for="first">First Name</label>
+	<input id="first" type="text" placeholder="John" name="first" required="true">
+<label for="flast">Last Name</label>
+	<input id="last" type="text" placeholder="Smith" name="last" required="true">
+
+<div>
+<label for="male">Male</label>
+<input name="gender" type="radio"  value="male">
+<label for="female">Female</label>
+<input name="gender" type="radio"  value="female">
+<label for="het">Other</label>
+<input name="gender" type="radio" value= "other">
+</div> 
+
+<div> 
+<label >
+Email:
+<input type="email " name="email" placeholder="your emal" required>
+</label>
+<label>
+Password:
+<input  type="password" name="password" placeholder="your password" required  title="5 to 10 " pattern=".{3,10}">
+</label>
+</div>
+
+<div>
+	<label>
+	Birthay
+		<select name="month">
+			<option>Month</option>
+			<option>Jan</option>
+			<option>Feb</option>
+			<option>Mar</option>
+		</select>
+
+		<select month="day">
+			<option>Day</option>
+			<option>10</option>
+			<option>11</option>
+			<option>12</option>
+		</select>
+
+		<select month="year">
+			<option>year</option>
+			<option>1999</option>
+			<option>2000</option>
+			<option>2001</option>
+		</select>
+	</label>
+</div>
+
+<div>
+<label for="agreed">I agree to terms</label>
+<input type="checkbox" name="agreed" id="agreed" required>
+<input type="submit" name="">
+</div>
+</form>
+
+<div>
+<h1>To do</h1>
+<ul>
+	<li>
+	<input type="checkbox" name="" "> Walk Rusty		
+	</li>
+	<li>
+	<input type="checkbox" name="" checked="true"> Finish Training
+	</li>
+	<li >
+	<input type="checkbox" name""> Dupal
+	</li>
+</ul>
+</div>
+
+<div><h3><a href="http://wp.pl">Link do mojej strony :</a></h3></div>
+
+</body>
+</html>
+
